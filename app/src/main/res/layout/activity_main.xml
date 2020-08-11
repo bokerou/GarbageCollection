@@ -1,18 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/main_title"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/city"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:id="@+id/city"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:hint="@string/search"
+            android:background="@null"
+            android:gravity="center"
+            android:id="@+id/search"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:background="@drawable/camera"
+            android:id="@+id/camera"/>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/main_title"
+        android:layout_above="@id/main_bottom_bar"
+        android:layout_alignEnd="@id/main_title"
+        android:id="@+id/main_body"
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/main_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FFFFFF"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/home_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/home"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/nearby_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/nearby"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:textColor="#000000"
+            />
+
+        <TextView
+            android:id="@+id/mine_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/mine"
+            android:textSize="25sp"
+            android:textColor="#000000"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
